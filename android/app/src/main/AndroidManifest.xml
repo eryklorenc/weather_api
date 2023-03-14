@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.weather_api">
+    package="com.eryklorenc.weather_api">
    <application
         android:label="weather_api"
         android:name="${applicationName}"
