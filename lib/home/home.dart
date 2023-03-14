@@ -14,7 +14,9 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text('Temperature'),
       ),
-      body: const Center(),
+      body: const Center(
+        
+      ),
     );
   }
 }
