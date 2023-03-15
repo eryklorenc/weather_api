@@ -15,6 +15,7 @@ class Search extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
         children: [
+          
           Expanded(
             child: TextField(
               controller: _controller,

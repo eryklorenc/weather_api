@@ -4,6 +4,7 @@ import 'package:weather_api/app/core/enums.dart';
 import 'package:weather_api/data/remote_data_sources/weather_remote_data_source.dart';
 import 'package:weather_api/home/cubit/home_cubit.dart';
 import 'package:weather_api/repositories/weather_repository.dart';
+import 'package:weather_api/widgets/additional_information.dart';
 import 'package:weather_api/widgets/display_weather.dart';
 import 'package:weather_api/widgets/search.dart';
 
@@ -39,8 +40,20 @@ class _HomeState extends State<Home> {
           builder: (context, state) {
             final weatherModel = state.model;
             return Scaffold(
+              backgroundColor: const Color(0xFFf9f9f9),
               appBar: AppBar(
-                title: const Text('Temperature'),
+                backgroundColor: const Color(0xFFf9f9f9),
+                elevation: 0.3,
+                title: const Text(
+                  'Weather App',
+                  style: TextStyle(color: Colors.black),
+                ),
+                centerTitle: true,
+                leading: IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {},
+                  color: Colors.black,
+                ),
               ),
               body: Center(
                 child: Builder(builder: (context) {
@@ -48,14 +61,28 @@ class _HomeState extends State<Home> {
                     return const Text('Loading');
                   }
                   return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       if (weatherModel != null)
                         DisplayWeather(
                           weatherModel: weatherModel,
                         ),
                       const SizedBox(
-                        height: 150,
+                        height: 10,
+                      ),
+                      const Text(
+                        'Additional Information',
+                        style: TextStyle(
+                            fontSize: 24,
+                            color: Color(0xdd212121),
+                            fontWeight: FontWeight.bold),
+                      ),
+                      if (weatherModel != null)
+                        AdditionalInformation(
+                          weatherModel: weatherModel,
+                        ),
+                      const SizedBox(
+                        height: 50,
                       ),
                       Search(),
                     ],

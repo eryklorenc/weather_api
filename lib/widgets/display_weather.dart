@@ -15,19 +15,34 @@ class DisplayWeather extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
-        return Column(
-          children: [
-            Text(
-              weatherModel.temperature.toString(),
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 60),
-            Text(
-              weatherModel.city,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 60),
-          ],
+        return Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.sunny,
+                color: Colors.black,
+                size: 90,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                weatherModel.temperature.toString(),
+                style: const TextStyle(fontSize: 40),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                weatherModel.city,
+                style: const TextStyle(
+                  fontSize: 17,
+                  color: Color(0xFF5a5a5a),
+                ),
+              ),
+              const SizedBox(height: 60),
+            ],
+          ),
         );
       },
     );
