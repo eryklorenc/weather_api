@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_api/app/core/enums.dart';
+import 'package:weather_api/data/remote_data_sources/weather_remote_data_source.dart';
 import 'package:weather_api/home/cubit/home_cubit.dart';
 import 'package:weather_api/repositories/weather_repository.dart';
 import 'package:weather_api/widgets/display_weather.dart';
@@ -18,7 +19,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => HomeCubit(
-        WeatherRepository(),
+        WeatherRepository(
+          WeatherRemoteDataSource(),
+        ),
       ),
       child: BlocListener<HomeCubit, HomeState>(
         listener: (context, state) {
