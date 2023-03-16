@@ -6,6 +6,7 @@ class WeatherModel {
     required this.humidity,
     required this.feelslike,
     required this.pressure,
+    required this.iconUrl,
   });
 
   final double temperature;
@@ -14,6 +15,7 @@ class WeatherModel {
   final int humidity;
   final double feelslike;
   final double pressure;
+  final String iconUrl;
 
   WeatherModel.fromJson(Map<String, dynamic> json)
       : temperature = json['current']['temp_c'] + 0.0,
@@ -21,5 +23,6 @@ class WeatherModel {
         wind = json['current']['wind_mph'] + 0.0,
         humidity = json['current']['humidity'],
         feelslike = json['current']['feelslike_c'] + 0.0,
-        pressure = json['current']['pressure_in'] + 0.0;
+        pressure = json['current']['pressure_in'] + 0.0,
+        iconUrl = json['current']['condition']['icon'];
 }

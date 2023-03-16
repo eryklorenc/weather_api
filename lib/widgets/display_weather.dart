@@ -20,10 +20,8 @@ class DisplayWeather extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.cloud_outlined,
-                color: Colors.black,
-                size: 90,
+              Image.network(
+                'http:${weatherModel.iconUrl}',
               ),
               const SizedBox(
                 height: 10,
