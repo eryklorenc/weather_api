@@ -4,17 +4,17 @@ import 'package:weather_api/home/cubit/home_cubit.dart';
 import 'package:weather_api/models/weather_model.dart';
 
 class AdditionalInformation extends StatelessWidget {
-  AdditionalInformation({
+  const AdditionalInformation({
     super.key,
     required this.weatherModel,
   });
 
   final WeatherModel weatherModel;
 
-  TextStyle titleFont =
+  final TextStyle titleFont =
       const TextStyle(fontWeight: FontWeight.w600, fontSize: 18);
 
-  TextStyle infoFont =
+  final TextStyle infoFont =
       const TextStyle(fontWeight: FontWeight.w300, fontSize: 18);
 
   @override
@@ -36,16 +36,32 @@ class AdditionalInformation extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Wind',
-                        style: titleFont,
+                      Row(
+                        children: [
+                          Text(
+                            'Wind',
+                            style: titleFont,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          const Icon(Icons.wind_power_outlined),
+                        ],
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        'Pressure',
-                        style: titleFont,
+                      Row(
+                        children: [
+                          Text(
+                            'Pressure',
+                            style: titleFont,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          const Icon(Icons.lock_clock),
+                        ],
                       ),
                     ],
                   ),
@@ -54,14 +70,14 @@ class AdditionalInformation extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        weatherModel.wind.toString(),
+                        '${weatherModel.wind} km/h',
                         style: infoFont,
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       Text(
-                        weatherModel.pressure.toString(),
+                        '${weatherModel.pressure} in',
                         style: infoFont,
                       ),
                     ],
@@ -70,16 +86,26 @@ class AdditionalInformation extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Humidity',
-                        style: titleFont,
+                      Row(
+                        children: [
+                          Text(
+                            'Humidity',
+                            style: titleFont,
+                          ),
+                          const Icon(Icons.water_drop),
+                        ],
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        'Feels Like',
-                        style: titleFont,
+                      Row(
+                        children: [
+                          Text(
+                            'Feels Like',
+                            style: titleFont,
+                          ),
+                          const Icon(Icons.device_thermostat),
+                        ],
                       ),
                     ],
                   ),
@@ -88,14 +114,14 @@ class AdditionalInformation extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        weatherModel.humidity.toString(),
+                        '${weatherModel.humidity}%',
                         style: infoFont,
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       Text(
-                        weatherModel.feelslike.toString(),
+                        '${weatherModel.feelslike}°C',
                         style: infoFont,
                       ),
                     ],

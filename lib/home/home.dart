@@ -70,13 +70,14 @@ class _HomeState extends State<Home> {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Text(
-                        'Additional Information',
-                        style: TextStyle(
-                            fontSize: 24,
-                            color: Color(0xdd212121),
-                            fontWeight: FontWeight.bold),
-                      ),
+                      if (weatherModel != null)
+                        const Text(
+                          'Additional Information',
+                          style: TextStyle(
+                              fontSize: 24,
+                              color: Color(0xdd212121),
+                              fontWeight: FontWeight.bold),
+                        ),
                       if (weatherModel != null)
                         AdditionalInformation(
                           weatherModel: weatherModel,

@@ -21,16 +21,21 @@ class DisplayWeather extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(
-                Icons.sunny,
+                Icons.cloud_outlined,
                 color: Colors.black,
                 size: 90,
               ),
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                weatherModel.temperature.toString(),
-                style: const TextStyle(fontSize: 40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '${weatherModel.temperature}°C',
+                    style: const TextStyle(fontSize: 40),
+                  ),
+                ],
               ),
               const SizedBox(height: 10),
               Text(

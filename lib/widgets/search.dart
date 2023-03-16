@@ -11,27 +11,39 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Row(
+    return Expanded(
+      child: ListView(
         children: [
-          
-          Expanded(
-            child: TextField(
-              controller: _controller,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                label: Text('City'),
-                hintText: 'London',
-              ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _controller,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      label: const Text('City'),
+                      hintText: 'London',
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    context
+                        .read<HomeCubit>()
+                        .getWeatherModel(city: _controller.text);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                  ),
+                  child: const Text('Get'),
+                ),
+              ],
             ),
-          ),
-          const SizedBox(width: 20),
-          ElevatedButton(
-            onPressed: () {
-              context.read<HomeCubit>().getWeatherModel(city: _controller.text);
-            },
-            child: const Text('Get'),
           ),
         ],
       ),
