@@ -7,7 +7,6 @@ class WeatherModel {
     required this.feelslike,
     required this.pressure,
     required this.iconUrl,
-    
   });
 
   final double temperature;
@@ -18,6 +17,9 @@ class WeatherModel {
   final double pressure;
   final String iconUrl;
 
+
+
+
   WeatherModel.fromJson(Map<String, dynamic> json)
       : temperature = json['current']['temp_c'] + 0.0,
         city = json['location']['name'],
@@ -26,4 +28,7 @@ class WeatherModel {
         feelslike = json['current']['feelslike_c'] + 0.0,
         pressure = json['current']['pressure_in'] + 0.0,
         iconUrl = json['current']['condition']['icon'];
+
+
+
 }

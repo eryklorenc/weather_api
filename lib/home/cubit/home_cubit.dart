@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_api/app/core/enums.dart';
 import 'package:weather_api/models/weather_model.dart';
 import 'package:weather_api/repositories/weather_repository.dart';

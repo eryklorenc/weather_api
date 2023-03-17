@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_api/app/core/enums.dart';
@@ -13,7 +14,9 @@ import 'package:weather_api/widgets/display_weather.dart';
 import 'package:weather_api/widgets/search.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({super.key,});
+
+
 
   @override
   State<Home> createState() => _HomeState();
