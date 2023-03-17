@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_api/content/cubit/astronomy_cubit.dart';
 import 'package:weather_api/home/cubit/home_cubit.dart';
 
 class Search extends StatelessWidget {
@@ -36,6 +37,9 @@ class Search extends StatelessWidget {
                     context
                         .read<HomeCubit>()
                         .getWeatherModel(city: _controller.text);
+                    context
+                        .read<AstronomyCubit>()
+                        .getAstronomyModel(city: _controller.text);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,

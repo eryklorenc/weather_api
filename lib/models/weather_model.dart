@@ -7,6 +7,7 @@ class WeatherModel {
     required this.feelslike,
     required this.pressure,
     required this.iconUrl,
+    
   });
 
   final double temperature;
