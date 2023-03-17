@@ -1,16 +1,12 @@
 # weather_api
 
-A new Flutter project.
+A weather app that lets you see the weather in a particular city
 
-## Getting Started
+<h2>Technologies used</h2>
 
-This project is a starting point for a Flutter application.
+<p><em>-Dart</p></em>
+<p><em>-Flutter</p></em>
+<p><em>-Bloc/Cubit</p></em>
+<p><em>-Rest API</p></em>
+<p><em>-Dio</p></em>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
