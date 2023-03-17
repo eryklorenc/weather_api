@@ -5,6 +5,7 @@ import 'package:weather_api/data/remote_data_sources/weather_remote_data_source.
 import 'package:weather_api/home/cubit/home_cubit.dart';
 import 'package:weather_api/repositories/weather_repository.dart';
 import 'package:weather_api/widgets/additional_information.dart';
+import 'package:weather_api/widgets/astronomy.dart';
 import 'package:weather_api/widgets/display_weather.dart';
 import 'package:weather_api/widgets/search.dart';
 
@@ -68,7 +69,7 @@ class _HomeState extends State<Home> {
                           weatherModel: weatherModel,
                         ),
                       const SizedBox(
-                        height: 10,
+                        height: 5,
                       ),
                       if (weatherModel != null)
                         const Text(
@@ -82,8 +83,26 @@ class _HomeState extends State<Home> {
                         AdditionalInformation(
                           weatherModel: weatherModel,
                         ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Icon(Icons.mode_night_outlined),
+                          Text(
+                            'Astronomy',
+                            style: TextStyle(
+                                fontSize: 24,
+                                color: Color(0xdd212121),
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Icon(Icons.wb_sunny_outlined)
+                        ],
+                      ),
                       const SizedBox(
-                        height: 50,
+                        height: 10,
+                      ),
+                      const Astronomy(),
+                      const SizedBox(
+                        height: 20,
                       ),
                       Search(),
                     ],
